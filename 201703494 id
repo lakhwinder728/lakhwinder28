@@ -1,0 +1,41 @@
+<?php
+
+class Pokemon
+{
+    
+    public $PokemonName;
+    public $PokemonType;
+    
+    
+    public function doPokemonAttack(){
+        return (rand(1,100));
+    }
+}
+$PokemonNames = array('Bulbasor','Ivysaur','venusaur','Charmelon','cvsbhdkbdsk','bcjgabj','bdcja','hdskhqa','bskjbkj','ghifa','bdskj','bsci','bsciks','vbsch','nhsohnik','bkjbs','bfkqfehbi',',vjad','bjsqb','vjbsj');
+$PokemonTypes = array('hksah','hdvkhwk','bkcbk','bsk','bcja','bcakb');
+$Pokeballs = array();
+for($counter=1; $counter<=20; $counter++){
+    $Pikachu = new Pokemon;
+$Pikachu->PokemonName=array_pop($PokemonNames);
+$Pikachu->PokemonTypes=$PokemonTypes[rand(0,sizeof($PokemonTypes)-1)];
+
+    
+    $Pokeballs[] = $Pikachu;
+}
+
+for ($battlesCount = 1;$battlesCount <=10; $battlesCount++)
+{
+echo "BATTLE: ".$battlesCount;
+$pokemon1 = array_pop($Pokeballs);
+$pokemon2 = array_pop($Pokeballs);
+$pokemon1_attackStrength =$pokemon1->doPokemonAttack();
+
+$pokemon2_attackStrength =$pokemon2->doPokemonAttack();
+echo"Pokemon 1 attack Strength: ".$Pokemon1_attackStrength."\r\n";
+
+echo"Pokemon 2 attack Strength: ".$Pokemon2_attackStrength."\r\n";
+
+}
+
+echo "fini";
+?>
